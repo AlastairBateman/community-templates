@@ -49,7 +49,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "znode_count")
@@ -80,7 +80,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "avg_close_session_prep_time" or r["_field"] == "cnt_close_session_prep_time" or r["_field"] == "max_close_session_prep_time" or r["_field"] == "min_close_session_prep_time" or r["_field"] == "sum_close_session_prep_time")
@@ -112,7 +112,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "avg_updatelatency" or r["_field"] == "cnt_updatelatency" or r["_field"] == "max_updatelatency" or r["_field"] == "min_updatelatency")
@@ -144,7 +144,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "avg_reads_after_write_in_session_queue" or r["_field"] == "cnt_reads_after_write_in_session_queue" or r["_field"] == "max_reads_after_write_in_session_queue" or r["_field"] == "min_reads_after_write_in_session_queue")
@@ -176,7 +176,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "avg_session_queues_drained" or r["_field"] == "cnt_session_queues_drained" or r["_field"] == "max_session_queues_drained" or r["_field"] == "min_session_queues_drained")
@@ -208,7 +208,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "last_client_response_size" or r["_field"] == "max_client_response_size" or r["_field"] == "min_client_response_size")
@@ -238,7 +238,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "avg_prep_processor_queue_size" or r["_field"] == "cnt_prep_processor_queue_size" or r["_field"] == "max_prep_processor_queue_size" or r["_field"] == "min_prep_processor_queue_size")
@@ -270,7 +270,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "prep_processor_request_queued" or r["_field"] == "sync_processor_request_queued")
@@ -292,7 +292,7 @@ spec:
         name: Quorum Size
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "cnt_quorum_ack_latency")
@@ -322,7 +322,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "max_latency" or r["_field"] == "min_latency")
@@ -355,7 +355,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "cnt_requests_in_session_queue" or r["_field"] == "max_requests_in_session_queue" or r["_field"] == "min_requests_in_session_queue" or r["_field"] == "avg_requests_in_session_queue")
@@ -388,7 +388,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "connection_request_count")
@@ -421,7 +421,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "connection_drop_count")
@@ -454,7 +454,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "avg_prep_process_time" or r["_field"] == "min_prep_process_time" or r["_field"] == "max_prep_process_time" or r["_field"] == "cnt_prep_process_time")
@@ -487,7 +487,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "avg_sync_processor_queue_flush_time_ms" or r["_field"] == "cnt_sync_processor_queue_flush_time_ms" or r["_field"] == "max_sync_processor_queue_flush_time_ms" or r["_field"] == "min_sync_processor_queue_flush_time_ms")
@@ -520,7 +520,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "learner_commit_received_count" or r["_field"] == "learner_proposal_received_count")
@@ -553,7 +553,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "ephemerals_count")
@@ -585,7 +585,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "avg_pending_session_queue_size" or r["_field"] == "max_pending_session_queue_size" or r["_field"] == "min_pending_session_queue_size")
@@ -618,7 +618,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "avg_reads_issued_from_session_queue" or r["_field"] == "cnt_reads_issued_from_session_queue" or r["_field"] == "max_reads_issued_from_session_queue" or r["_field"] == "min_reads_issued_from_session_queue")
@@ -651,7 +651,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "min_snapshottime" or r["_field"] == "max_snapshottime" or r["_field"] == "cnt_snapshottime" or r["_field"] == "avg_snapshottime")
@@ -684,7 +684,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "connection_request_count")
@@ -717,7 +717,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "avg_prep_processor_queue_time_ms" or r["_field"] == "cnt_prep_processor_queue_time_ms" or r["_field"] == "max_prep_processor_queue_time_ms" or r["_field"] == "min_prep_processor_queue_time_ms")
@@ -750,7 +750,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "sync_processor_request_queued")
@@ -783,7 +783,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "avg_sync_process_time" or r["_field"] == "cnt_sync_process_time" or r["_field"] == "max_sync_process_time" or r["_field"] == "min_sync_process_time")
@@ -806,7 +806,7 @@ spec:
         name: Global Sessions
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "global_sessions")
@@ -826,7 +826,7 @@ spec:
         name: Local Sessions
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "local_sessions")
@@ -857,7 +857,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "avg_fsynctime" or r["_field"] == "cnt_fsynctime" or r["_field"] == "max_fsynctime" or r["_field"] == "min_fsynctime")
@@ -890,7 +890,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "connection_drop_probability")
@@ -923,7 +923,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "outstanding_changes_queued")
@@ -956,7 +956,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "min_sync_processor_batch_size" or r["_field"] == "max_sync_processor_batch_size" or r["_field"] == "cnt_sync_processor_batch_size" or r["_field"] == "avg_sync_processor_batch_size")
@@ -989,7 +989,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "zookeeper")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "zookeeper")
                   |> filter(fn: (r) => r["_field"] == "max_sync_processor_queue_size" or r["_field"] == "min_sync_processor_queue_size")

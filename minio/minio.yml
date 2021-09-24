@@ -35,7 +35,7 @@ spec:
         name: Uptime
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "process_start_time_seconds")
                   |> map(fn: (r) => ({ r with _value: (int(v: now()) - int(v: int(v: r._value) * 1000000000)) / int(v: 1d) }))
@@ -65,7 +65,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "process_cpu_seconds_total")
                   |> derivative(unit: v.windowPeriod, nonNegative: true)
@@ -99,7 +99,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "s3_rx_bytes_total")
                   |> derivative(unit: v.windowPeriod, nonNegative: true)
@@ -133,7 +133,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "s3_requests_total")
         shade: true
@@ -165,7 +165,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "s3_ttfb_seconds")
                   |> filter(fn: (r) => r["_field"] == "count")
@@ -186,7 +186,7 @@ spec:
         name: Total Storage
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "disk_storage_total")
                   |> map(fn: (r) => ({r with _value: r._value / 1073741824.00}))
@@ -203,7 +203,7 @@ spec:
         name: Storage Used
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "disk_storage_used")
                   |> map(fn: (r) => ({r with _value: r._value / 1073741824.00}))
@@ -227,7 +227,7 @@ spec:
         name: Storage Available
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "disk_storage_available")
                   |> map(fn: (r) => ({r with _value: r._value / 1073741824.00}))
@@ -258,7 +258,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "go_memstats_alloc_bytes")
         shade: true
@@ -291,7 +291,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "s3_tx_bytes_total")
                   |> derivative(unit: v.windowPeriod, nonNegative: true)
@@ -326,7 +326,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "s3_requests_current")
                   |> filter(fn: (r) => r["api"] == "getbucketlocation" or r["api"] == "getobject" or r["api"] == "getbucketobjectlockconfiguration" or r["api"] == "headbucket" or r["api"] == "headobject" or r["api"] == "listbuckets" or r["api"] == "listobjectsv1" or r["api"] == "newmultipartupload" or r["api"] == "putobjectpart")
@@ -348,7 +348,7 @@ spec:
         name: Error "Put Object Part"
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "s3_errors_total")
                   |> filter(fn: (r) => r["_field"] == "counter")
@@ -368,7 +368,7 @@ spec:
         name: Error "Get Bucket Location"
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "s3_errors_total")
                   |> filter(fn: (r) => r["_field"] == "counter")
@@ -388,7 +388,7 @@ spec:
         name: Error "Object List"
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "s3_errors_total")
                   |> filter(fn: (r) => r["_field"] == "counter")
@@ -408,7 +408,7 @@ spec:
         name: Total Disks
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "minio_disks_total")
         width: 2
@@ -423,7 +423,7 @@ spec:
         name: Error "Object Lock"
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "s3_errors_total")
                   |> filter(fn: (r) => r["_field"] == "counter")
@@ -443,7 +443,7 @@ spec:
         name: Offline Disks
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "minio_disks_offline")
         width: 2
@@ -458,7 +458,7 @@ spec:
         name: Total Objects
         queries:
           - query: |-
-                from(bucket: "minio")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "bucket_objects_count")
                   |> count()

@@ -43,7 +43,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "github")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["name"] == "influxdb")
                   |> filter(fn: (r) => r["_field"] == "forks")
@@ -70,7 +70,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "github")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["name"] == "telegraf")
                   |> filter(fn: (r) => r["_field"] == "forks")
@@ -102,7 +102,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "github")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["name"] == "influxdb")
                   |> filter(fn: (r) => r["_field"] == "open_issues")
@@ -141,7 +141,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "github")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["name"] == "telegraf")
                   |> filter(fn: (r) => r["_field"] == "open_issues")
@@ -172,7 +172,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "github")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["name"] == "influxdb")
                   |> filter(fn: (r) => r["_field"] == "stars")
@@ -202,7 +202,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "github")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["name"] == "telegraf")
                   |> filter(fn: (r) => r["_field"] == "stars")
@@ -229,7 +229,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "github")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["name"] == "influxdb")
                   |> filter(fn: (r) => r["_field"] == "subscribers")
@@ -255,7 +255,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "github")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["name"] == "telegraf")
                   |> filter(fn: (r) => r["_field"] == "subscribers")

@@ -33,7 +33,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "insights")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "kafka_consumer")
                   |> filter(fn: (r) => r["_field"] == "risk_score")
@@ -57,7 +57,7 @@ spec:
         name: Risk Score
         queries:
           - query: |-
-                from(bucket: "insights")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "kafka_consumer")
                   |> filter(fn: (r) => r["_field"] == "risk_score")
@@ -88,7 +88,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "insights")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "kafka_consumer")
                   |> filter(fn: (r) => r["_field"] == "approved")
@@ -124,7 +124,7 @@ spec:
         name: Approved
         queries:
           - query: |-
-                from(bucket: "insights")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "kafka_consumer")
                   |> filter(fn: (r) => r["_field"] == "approved")
@@ -154,7 +154,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "insights")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "kafka_consumer")
                   |> filter(fn: (r) => r["_field"] == "duration_milliseconds")
@@ -180,7 +180,7 @@ spec:
         name: Algorithm Duration
         queries:
           - query: |-
-                from(bucket: "insights")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "kafka_consumer")
                   |> filter(fn: (r) => r["_field"] == "duration_milliseconds")

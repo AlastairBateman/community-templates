@@ -35,7 +35,7 @@ spec:
         name: Uptime
         queries:
           - query: |-
-                from(bucket: "vsphere")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "vsphere_host_sys")
                   |> filter(fn: (r) => r["_field"] == "uptime_latest")
@@ -68,7 +68,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "vsphere")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "vsphere_host_net")
                   |> filter(fn: (r) => r["_field"] == "usage_average")
@@ -86,7 +86,7 @@ spec:
         name: CPU Usage
         queries:
           - query: |-
-                from(bucket: "vsphere")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "vsphere_host_cpu")
                   |> filter(fn: (r) => r["_field"] == "usagemhz_average")
@@ -103,7 +103,7 @@ spec:
         name: RAM Usage
         queries:
           - query: |-
-                from(bucket: "vsphere")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "vsphere_host_mem")
                   |> filter(fn: (r) => r["_field"] == "totalCapacity_average")
@@ -136,7 +136,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "vsphere")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "vsphere_host_cpu")
                   |> filter(fn: (r) => r["_field"] == "usage_average")
@@ -168,7 +168,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "vsphere")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "vsphere_host_disk")
                   |> filter(fn: (r) => r["_field"] == "totalReadLatency_average" or r["_field"] == "totalWriteLatency_average")
@@ -201,7 +201,7 @@ spec:
         position: stacked
         queries:
           - query: |-
-                from(bucket: "vsphere")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "vsphere_host_mem")
                   |> filter(fn: (r) => r["_field"] == "totalCapacity_average")
@@ -236,7 +236,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "vsphere")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "vsphere_host_storageAdapter")
                   |> filter(fn: (r) => r["_field"] == "read_average" or r["_field"] == "write_average")

@@ -157,7 +157,7 @@ spec:
         name: Population
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -1d, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "states-current-covid")
                   |> filter(fn: (r) => r["_field"] == "population")
@@ -201,7 +201,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -30, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "states-covid-historic")
                   |> filter(fn: (r) => r["state"] == v.state)
@@ -231,7 +231,7 @@ spec:
         name: Active Cases
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -1d, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "states-current-covid")
                   |> filter(fn: (r) => r["_field"] == "active")
@@ -258,7 +258,7 @@ spec:
         name: Total Deaths
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -1d, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "states-current-covid")
                   |> filter(fn: (r) => r["_field"] == "deaths")
@@ -302,7 +302,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -30d, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "vaccine-historic")
                   |> filter(fn: (r) => r["location"] == v.state)
@@ -346,7 +346,7 @@ spec:
         name: Percentage of Fully Vaccinated People
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -1d, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "vaccine-historic")
                   |> filter(fn: (r) => r["location"] == v.state)
@@ -396,7 +396,7 @@ spec:
         name: Deaths in each county
         queries:
           - query: |-
-                latlong = from(bucket: "covid")
+                latlong = from(bucket: "telegraf")
                   |> range(start: -1d, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "states-counties-map")
                   |> filter(fn: (r) => r["_field"] == "coordinates_longitude" or r["_field"] == "coordinates_latitude")
@@ -404,7 +404,7 @@ spec:
                   |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")
                   |> group()
 
-                stats = from(bucket: "covid")
+                stats = from(bucket: "telegraf")
                   |> range(start: -1d, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "states-counties-map")
                   |> filter(fn: (r) => r["_field"] == "stats_confirmed" or r["_field"] == "stats_deaths")

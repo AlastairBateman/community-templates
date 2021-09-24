@@ -69,7 +69,7 @@ spec:
         city_lon = float(v: city_coordinates[2])
         alert_delay = duration(v: string(v: alert_delay_min * (-2)) + "m")
         stop = experimental.addDuration(to: now(), d: task.offset)
-        alerted_ids = from(bucket: "apis")
+        alerted_ids = from(bucket: "telegraf")
         	|> range(start: -2d, stop: stop)
         	|> filter(fn: (r) =>
         		(r._measurement == "earthquake_alert_log"))
@@ -77,7 +77,7 @@ spec:
         	|> unique()
         	|> findColumn(fn: (key) =>
         		(true), column: "id")
-        global = from(bucket: "apis")
+        global = from(bucket: "telegraf")
         	|> range(start: -30m, stop: alert_delay)
         	|> filter(fn: (r) =>
         		(r["_measurement"] == "earthquake_stats"))
@@ -86,7 +86,7 @@ spec:
         		(r["type"] == "earthquake" and r["status"] != "deleted"))
         	|> filter(fn: (r) =>
         		(r["mag"] >= global_mag_threshold))
-        regional = from(bucket: "apis")
+        regional = from(bucket: "telegraf")
         	|> range(start: -30m, stop: alert_delay)
         	|> filter(fn: (r) =>
         		(r["_measurement"] == "earthquake_stats"))
@@ -419,7 +419,7 @@ spec:
                   else
                     place
 
-                from(bucket: "apis")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "earthquake_stats")
                   |> schema.fieldsAsCols()
@@ -500,7 +500,7 @@ spec:
 
                 mag_threshold = float(v: v.Magnitude_Threshold)
 
-                from(bucket: "apis")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "earthquake_stats")
                   |> schema.fieldsAsCols()
@@ -552,7 +552,7 @@ spec:
                   else
                     place
 
-                from(bucket: "apis")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "earthquake_stats")
                   |> schema.fieldsAsCols()
@@ -594,7 +594,7 @@ spec:
 
                 mag_threshold = float(v: v.Magnitude_Threshold)
 
-                from(bucket: "apis")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "earthquake_stats")
                   |> schema.fieldsAsCols()
@@ -663,7 +663,7 @@ spec:
 
                 mag_threshold = float(v: v.Magnitude_Threshold)
 
-                from(bucket: "apis")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "earthquake_stats")
                   |> schema.fieldsAsCols()
@@ -743,7 +743,7 @@ spec:
                   else
                     ""
 
-                from(bucket: "apis")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "earthquake_stats")
                   |> schema.fieldsAsCols()
@@ -913,7 +913,7 @@ spec:
                   else
                     place
 
-                from(bucket: "apis")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "earthquake_stats")
                   |> schema.fieldsAsCols()
@@ -980,7 +980,7 @@ spec:
 
                 mag_threshold = float(v: v.Magnitude_Threshold)
 
-                from(bucket: "apis")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "earthquake_stats")
                   |> schema.fieldsAsCols()

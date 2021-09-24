@@ -30,7 +30,7 @@ spec:
     every: 1m0s
     name: Server Load
     query: |-
-        from(bucket: "website")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r._measurement == "apache")
           |> filter(fn: (r) => r._field == "Load1")
@@ -57,7 +57,7 @@ spec:
     every: 10m0s
     name: Disk Space
     query: |-
-        from(bucket: "website")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r["_measurement"] == "disk")
           |> filter(fn: (r) => r["_field"] == "free")
@@ -84,7 +84,7 @@ spec:
     every: 1m0s
     name: Memory Usage
     query: |-
-        from(bucket: "website")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r["_measurement"] == "mem")
           |> filter(fn: (r) => r["_field"] == "used_percent")
@@ -163,7 +163,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "website")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "apache")
                   |> filter(fn: (r) => r._field == "Load1" or r._field == "Load5" or r._field == "Load15")
@@ -197,7 +197,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "website")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "apache")
                   |> filter(fn: (r) => r._field == "ConnsTotal" or r._field == "ConnsAsyncWriting" or r._field == "ConnsAsyncKeepAlive" or r._field == "ConnsAsyncClosing" or r._field == "BusyWorkers")
@@ -235,7 +235,7 @@ spec:
         queries:
           - query: |-
                 import "experimental/aggregate"
-                from(bucket: "website")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "postgresql")
                   |> filter(fn: (r) => r._field == "tup_inserted" or r._field == "tup_updated" or r._field == "tup_deleted" or r._field == "tup_fetched")
@@ -270,7 +270,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "website")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "cpu")
                   |> filter(fn: (r) => r._field == "usage_system" or r._field == "usage_iowait" or r._field == "usage_steal" or r._field == "usage_user")
@@ -307,7 +307,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "website")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "mem")
                   |> filter(fn: (r) => r._field == "used_percent")
@@ -342,7 +342,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "website")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "disk")
                   |> filter(fn: (r) => r._field == "used" or r._field == "free" or r._field == "total")

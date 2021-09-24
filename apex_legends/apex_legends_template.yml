@@ -51,7 +51,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_totals")
                   |> filter(fn: (r) => r["_field"] == "kills_value")
@@ -72,7 +72,7 @@ spec:
         name: Player Name
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_global")
                   |> filter(fn: (r) => r["_field"] == "name")
@@ -90,7 +90,7 @@ spec:
         name: Platform
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_global")
                   |> filter(fn: (r) => r["_field"] == "platform")
@@ -109,7 +109,7 @@ spec:
         name: Level
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_global")
                   |> filter(fn: (r) => r["_field"] == "level")
@@ -144,7 +144,7 @@ spec:
         name: Current BattlePass Level
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_global_battlepass")
                   |> filter(fn: (r) => r["_field"] == "level")
@@ -167,7 +167,7 @@ spec:
         name: Current Ranked Level
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_global_rank")
                   |> filter(fn: (r) => r["_field"] == "rankName")
@@ -209,7 +209,7 @@ spec:
         name: Ranked Points
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_global")
                   |> filter(fn: (r) => r["_field"] == "rankScore_value" or r["_field"] == "rank_rankScore")
@@ -228,7 +228,7 @@ spec:
         name: Games Played
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_global" or r["_measurement"] == "apexlegends_totals")
                   |> filter(fn: (r) => r["_field"] == "winning_kills_value" or r["_field"] == "games_played_value")
@@ -250,7 +250,7 @@ spec:
         name: Player Level
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_global")
                   |> filter(fn: (r) => r["_field"] == "level")
@@ -283,7 +283,7 @@ spec:
         position: stacked
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_legend_bloodhound" or r["_measurement"] == "apexlegends_legend_bangalore" or r["_measurement"] == "apexlegends_legend_loba" or r["_measurement"] == "apexlegends_legend_mirage" or r["_measurement"] == "apexlegends_legend_wraith" or r["_measurement"] == "apexlegends_legend_pathfinder" or r["_measurement"] == "apexlegends_legend_octane")
                   |> filter(fn: (r) => r["key"] == "kills")
@@ -308,7 +308,7 @@ spec:
         name: Kill/Death Ratio
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_totals")
                   |> filter(fn: (r) => r["_field"] == "kd_value")
@@ -330,7 +330,7 @@ spec:
         name: Total Damage Dealt
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_totals")
                   |> filter(fn: (r) => r["_field"] == "damage_value")
@@ -352,7 +352,7 @@ spec:
         name: Is Online
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_realtime")
                   |> filter(fn: (r) => r["_field"] == "isOnline")
@@ -387,7 +387,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_totals")
                   |> filter(fn: (r) => r["_field"] == "kills_season_5_value")
@@ -408,7 +408,7 @@ spec:
         name: Current Legend
         queries:
           - query: |-
-                from(bucket: "apexlegends")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "apexlegends_realtime")
                   |> filter(fn: (r) => r["_field"] == "selectedLegend")

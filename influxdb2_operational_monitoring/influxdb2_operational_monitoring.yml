@@ -450,7 +450,7 @@ spec:
           - query: |-
                 import "influxdata/influxdb"
 
-                from(bucket: "cardinality")
+                from(bucket: "telegraf")
                     |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                     |> filter(fn: (r) => r._measurement == "buckets" and r._field == "cardinality")
                     |> aggregateWindow(every:v.windowPeriod, fn: last)
@@ -488,7 +488,7 @@ spec:
           - query: |-
                 import "influxdata/influxdb"
 
-                from(bucket: "cardinality")
+                from(bucket: "telegraf")
                     |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                     |> filter(fn: (r) => r._measurement == "buckets" and r._field == "cardinality")
                     |> last()

@@ -52,7 +52,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_system_cpuload_0")
@@ -77,7 +77,7 @@ spec:
         name: Local Drives
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_storage_num_storages_local")
@@ -95,7 +95,7 @@ spec:
         name: Apps Installed
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_system_apps_num_installed")
@@ -113,7 +113,7 @@ spec:
         name: Drives
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_storage_num_storages")
@@ -132,7 +132,7 @@ spec:
         name: Others
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_storage_num_users")
@@ -155,7 +155,7 @@ spec:
         name: Updates Available
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_system_apps_num_updates_available")
@@ -174,7 +174,7 @@ spec:
         name: Total Memory (GB)
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_system_mem_total")
@@ -209,7 +209,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_storage_num_files")
@@ -248,7 +248,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_activeUsers_last5minutes")
@@ -287,7 +287,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_system_mem_free")
@@ -324,7 +324,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_activeUsers_last1hour")
@@ -363,7 +363,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_system_freespace")
@@ -398,7 +398,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_system_swap_total")
@@ -435,7 +435,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_activeUsers_last24hours")
@@ -471,7 +471,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_system_swap_free")
@@ -499,7 +499,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "response_time")
@@ -521,7 +521,7 @@ spec:
         name: Database Size (MB)
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_server_database_size")
@@ -539,7 +539,7 @@ spec:
         name: HTTP - Status Code
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_meta_statuscode")
@@ -564,7 +564,7 @@ spec:
         name: Received
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)
@@ -582,7 +582,7 @@ spec:
         name: Links
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_shares_num_shares_link")
@@ -601,7 +601,7 @@ spec:
         name: By email
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_shares_num_shares_mail")
@@ -624,7 +624,7 @@ spec:
         name: Without password
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_shares_num_shares_link_no_password")
@@ -643,7 +643,7 @@ spec:
         name: PHP Max Exec Time
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_server_php_max_execution_time")
@@ -662,7 +662,7 @@ spec:
         name: Sent
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_shares_num_fed_shares_sent")
@@ -681,7 +681,7 @@ spec:
         name: Group
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_shares_num_shares_groups")
@@ -700,7 +700,7 @@ spec:
         name: Room (Chats)
         queries:
           - query: |-
-                from(bucket: "nextcloud")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "httpjson_nextcloud_stats")
                   |> filter(fn: (r) => r["_field"] == "ocs_data_nextcloud_shares_num_shares_room")

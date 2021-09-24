@@ -35,7 +35,7 @@ spec:
         name: Argentina
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_argentina")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -50,7 +50,7 @@ spec:
         name: Nuevos casos
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_argentina")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -69,7 +69,7 @@ spec:
         name: Fallecidos (24 horas)
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_argentina")
                   |> filter(fn: (r) => r["_field"] == "location_latest_deaths")
@@ -83,7 +83,7 @@ spec:
         name: Total Casos
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -12h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_brasil" or r["_measurement"] == "exec_chile" or r["_measurement"] == "exec_paraguay" or r["_measurement"] == "exec_argentina" or r["_measurement"] == "exec_bolivia" or r["_measurement"] == "exec_uruguay")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -98,7 +98,7 @@ spec:
         name: Fallecidos
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -12h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_argentina" or r["_measurement"] == "exec_uruguay" or r["_measurement"] == "exec_bolivia" or r["_measurement"] == "exec_paraguay" or r["_measurement"] == "exec_chile" or r["_measurement"] == "exec_brasil")
                   |> filter(fn: (r) => r["_field"] == "location_latest_deaths")
@@ -116,7 +116,7 @@ spec:
         name: Casos - Total
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_worldwide")
                   |> filter(fn: (r) => r["_field"] == "latest_confirmed")
@@ -132,7 +132,7 @@ spec:
         name: Fallecidos
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_worldwide")
                   |> filter(fn: (r) => r["_field"] == "latest_deaths")
@@ -147,7 +147,7 @@ spec:
         name: 24 horas
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_worldwide")
                   |> filter(fn: (r) => r["_field"] == "latest_confirmed")
@@ -166,7 +166,7 @@ spec:
         name: 24 horas
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_worldwide")
                   |> filter(fn: (r) => r["_field"] == "latest_deaths")
@@ -185,7 +185,7 @@ spec:
         name: Bolivia
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_bolivia")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -201,7 +201,7 @@ spec:
         name: Nuevos casos
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_bolivia")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -221,7 +221,7 @@ spec:
         name: Fallecidos (24 horas)
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_bolivia")
                   |> filter(fn: (r) => r["_field"] == "location_latest_deaths")
@@ -255,7 +255,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -7d)
                   |> filter(fn: (r) => r["_measurement"] == "exec_argentina" or r["_measurement"] == "exec_uruguay" or r["_measurement"] == "exec_bolivia" or r["_measurement"] == "exec_paraguay" or r["_measurement"] == "exec_chile" or r["_measurement"] == "exec_brasil")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -290,7 +290,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -7d)
                   |> filter(fn: (r) => r["_measurement"] == "exec_argentina" or r["_measurement"] == "exec_uruguay" or r["_measurement"] == "exec_bolivia" or r["_measurement"] == "exec_paraguay" or r["_measurement"] == "exec_chile" or r["_measurement"] == "exec_brasil")
                   |> filter(fn: (r) => r["_field"] == "location_latest_deaths")
@@ -325,7 +325,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -7d)
                   |> filter(fn: (r) => r["_measurement"] == "exec_worldwide")
                   |> filter(fn: (r) => r["_field"] == "latest_confirmed")
@@ -359,7 +359,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -7d)
                   |> filter(fn: (r) => r["_measurement"] == "exec_worldwide")
                   |> filter(fn: (r) => r["_field"] == "latest_deaths")
@@ -379,7 +379,7 @@ spec:
         name: Brasil
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_brasil")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -395,7 +395,7 @@ spec:
         name: Nuevos casos
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_brasil")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -415,7 +415,7 @@ spec:
         name: Fallecidos (24 horas)
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_brasil")
                   |> filter(fn: (r) => r["_field"] == "location_latest_deaths")
@@ -434,7 +434,7 @@ spec:
         name: Chile
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_chile")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -450,7 +450,7 @@ spec:
         name: Nuevos casos
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_chile")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -470,7 +470,7 @@ spec:
         name: Fallecidos (24 horas)
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_chile")
                   |> filter(fn: (r) => r["_field"] == "location_latest_deaths")
@@ -489,7 +489,7 @@ spec:
         name: Paraguay
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_paraguay")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -505,7 +505,7 @@ spec:
         name: Nuevos casos
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_paraguay")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -525,7 +525,7 @@ spec:
         name: Fallecidos (24 horas)
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_paraguay")
                   |> filter(fn: (r) => r["_field"] == "location_latest_deaths")
@@ -544,7 +544,7 @@ spec:
         name: Uruguay
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_uruguay")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -560,7 +560,7 @@ spec:
         name: Nuevos casos
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_uruguay")
                   |> filter(fn: (r) => r["_field"] == "location_latest_confirmed")
@@ -580,7 +580,7 @@ spec:
         name: Fallecidos (24 horas)
         queries:
           - query: |-
-                from(bucket: "covid")
+                from(bucket: "telegraf")
                   |> range(start: -24h)
                   |> filter(fn: (r) => r["_measurement"] == "exec_uruguay")
                   |> filter(fn: (r) => r["_field"] == "location_latest_deaths")

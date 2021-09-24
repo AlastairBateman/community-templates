@@ -952,7 +952,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "demo")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "prometheus")
                   |> filter(fn: (r) => r["_field"] == "ceph_num_objects_degraded" or r["_field"] == "ceph_num_objects_misplaced" or r["_field"] == "ceph_num_objects_unfound")

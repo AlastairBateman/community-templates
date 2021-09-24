@@ -59,7 +59,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "speedtest")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_speedtest")
                   |> filter(fn: (r) => r["_field"] == "ping_latency")
@@ -92,7 +92,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "speedtest")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_speedtest")
                   |> filter(fn: (r) => r["_field"] == "ping_jitter")
@@ -115,7 +115,7 @@ spec:
         name: Packet Loss
         queries:
           - query: |-
-                from(bucket: "speedtest")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_speedtest")
                   |> filter(fn: (r) => r["_field"] == "packetLoss")
@@ -153,7 +153,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "speedtest")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_speedtest")
                   |> filter(fn: (r) => r["_field"] == "upload_bandwidth" or r["_field"] == "download_bandwidth")
@@ -198,7 +198,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "speedtest")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_speedtest")
                   |> filter(fn: (r) => r["_field"] == "download_bandwidth")
@@ -232,7 +232,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "speedtest")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_speedtest")
                   |> filter(fn: (r) => r["_field"] == "upload_bandwidth")

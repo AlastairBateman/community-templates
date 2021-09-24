@@ -39,7 +39,7 @@ spec:
         name: CPU Usage
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "cpu")
                   |> filter(fn: (r) => r["_field"] == "usage_system")
@@ -68,7 +68,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "haproxy")
                   |> filter(fn: (r) => r["_field"] == "bin")
@@ -103,7 +103,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "haproxy")
                   |> filter(fn: (r) => r["_field"] == "scur")
@@ -138,7 +138,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "haproxy")
                   |> filter(fn: (r) => r["_field"] == "req_tot")
@@ -159,7 +159,7 @@ spec:
         name: Uptime
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "system")
                   |> filter(fn: (r) => r["_field"] == "uptime_format")
@@ -175,7 +175,7 @@ spec:
         name: Memory Used (%)
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mem")
                   |> filter(fn: (r) => r["_field"] == "used_percent")
@@ -207,7 +207,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "haproxy")
                   |> filter(fn: (r) => r["_field"] == "stot")
@@ -243,7 +243,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "haproxy")
                   |> filter(fn: (r) => r["_field"] == "dreq")
@@ -279,7 +279,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "haproxy")
                   |> filter(fn: (r) => r["_field"] == "qcur")
@@ -314,7 +314,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "haproxy")
                   |> filter(fn: (r) => r["_field"] == "http_response.1xx" or r["_field"] == "http_response.2xx" or r["_field"] == "http_response.3xx" or r["_field"] == "http_response.4xx" or r["_field"] == "http_response.5xx" or r["_field"] == "http_response.other")
@@ -349,7 +349,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "haproxy")
                   |> filter(fn: (r) => r["_field"] == "bout")
@@ -385,7 +385,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "haproxy")
                   |> filter(fn: (r) => r["_field"] == "active_servers")
@@ -421,7 +421,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "haproxy")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "haproxy")
                   |> filter(fn: (r) => r["_field"] == "ereq")

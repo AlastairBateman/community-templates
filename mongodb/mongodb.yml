@@ -35,7 +35,7 @@ spec:
         name: Uptime Mongo
         queries:
           - query: |-
-                from(bucket: "mongodb")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mongodb")
                   |> filter(fn: (r) => r["_field"] == "uptime_ns")
@@ -68,7 +68,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mongodb")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mongodb")
                   |> filter(fn: (r) => r["_field"] == "commands" or r["_field"] == "deletes" or r["_field"] == "getmores" or r["_field"] == "inserts" or r["_field"] == "updates")
@@ -103,7 +103,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mongodb")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mongodb")
                   |> filter(fn: (r) => r["_field"] == "net_in_bytes" or r["_field"] == "net_out_bytes")
@@ -137,7 +137,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mongodb")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mongodb")
                   |> filter(fn: (r) => r["_field"] == "connections_available")
@@ -169,7 +169,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mongodb")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mongodb")
                   |> filter(fn: (r) => r["_field"] == "document_deleted" or r["_field"] == "document_inserted" or r["_field"] == "document_returned" or r["_field"] == "document_updated")
@@ -204,7 +204,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mongodb")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mongodb")
                   |> filter(fn: (r) => r["_field"] == "commands_per_sec")
@@ -239,7 +239,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mongodb")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mongodb")
                   |> filter(fn: (r) => r["_field"] == "open_connections")
@@ -273,7 +273,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mongodb")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mongodb")
                   |> filter(fn: (r) => r["_field"] == "flushes")

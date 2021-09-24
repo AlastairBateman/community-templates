@@ -104,7 +104,7 @@ spec:
                 import "strings"
                 import "regexp"
 
-                from(bucket: "_tasks")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "runs")
                   |> filter(fn: (r) => r["_field"] == "logs")
@@ -150,7 +150,7 @@ spec:
                 import "regexp"
 
 
-                from(bucket: "_tasks")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "runs")
                   |> filter(fn: (r) => r["_field"] == "logs" or r._field == "name")
@@ -216,7 +216,7 @@ spec:
                 import "regexp"
 
 
-                from(bucket: "_tasks")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "runs" and r.status == "failed")
                   |> filter(fn: (r) => r["_field"] == "errorMessage" or r._field == "runID" or r._field == "name")
@@ -260,7 +260,7 @@ spec:
                 import "regexp"
 
 
-                from(bucket: "_tasks")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "runs")
                   |> filter(fn: (r) => r["_field"] == "logs")
@@ -327,7 +327,7 @@ spec:
                 import "regexp"
 
 
-                from(bucket: "_tasks")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "runs")
                   |> filter(fn: (r) => r["status"] == "success")
@@ -363,7 +363,7 @@ spec:
                 import "strings"
                 import "regexp"
 
-                from(bucket: "_tasks")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "runs")
                   |> filter(fn: (r) => r["_field"] == "logs")
@@ -387,7 +387,7 @@ spec:
                 import "strings"
                 import "regexp"
 
-                from(bucket: "_tasks")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "runs")
                   |> filter(fn: (r) => r["_field"] == "logs")

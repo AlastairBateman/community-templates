@@ -252,7 +252,7 @@ spec:
           - query: |
                 import "influxdata/influxdb/v1"
 
-                data = from(bucket: "sflow_data")
+                data = from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn:(r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field== "bytes" or r._field == "sampling_rate")
@@ -362,7 +362,7 @@ spec:
           - query: |
                 import "influxdata/influxdb/v1"
 
-                data = from(bucket: "sflow_data")
+                data = from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn:(r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r.host== v.agent_host)
@@ -420,7 +420,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == v.sflow_metric)
@@ -454,7 +454,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == v.sflow_metric)
@@ -490,7 +490,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == v.sflow_metric)
@@ -525,7 +525,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == v.sflow_metric)
@@ -560,7 +560,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == v.sflow_metric)
@@ -607,7 +607,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == v.sflow_metric)
@@ -639,7 +639,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == v.sflow_metric)
@@ -675,7 +675,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == v.sflow_metric)
@@ -710,7 +710,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == v.sflow_metric)
@@ -743,7 +743,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == v.sflow_metric)
@@ -793,7 +793,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == "bytes")
@@ -833,7 +833,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == "bytes")
@@ -874,7 +874,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == "bytes")
@@ -915,7 +915,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "sflow_data")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "sflow")
                   |> filter(fn: (r) => r._field == "bytes")

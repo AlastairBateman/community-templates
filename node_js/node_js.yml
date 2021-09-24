@@ -55,7 +55,7 @@ spec:
         name: Average Response Time
         queries:
           - query: |-
-                from(bucket: "iot_center")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "express_http_server")
                   |> filter(fn: (r) => r["_field"] == "response_time")
@@ -76,7 +76,7 @@ spec:
         name: Maximal Response Time
         queries:
           - query: |-
-                from(bucket: "iot_center")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "express_http_server")
                   |> filter(fn: (r) => r["_field"] == "response_time")
@@ -98,7 +98,7 @@ spec:
         name: Current Heap Usage
         queries:
           - query: |-
-                from(bucket: "iot_center")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "node_memory_usage")
                   |> filter(fn: (r) => r["_field"] == "heapUsed")
@@ -157,7 +157,7 @@ spec:
         name: Response Time & Status
         queries:
           - query: |-
-                from(bucket: "iot_center")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "express_http_server")
                   |> filter(fn: (r) => r["_field"] == "response_time")
@@ -199,7 +199,7 @@ spec:
         position: stacked
         queries:
           - query: |-
-                from(bucket: "iot_center")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "express_http_server")
                   |> filter(fn: (r) => r["_field"] == "response_time")
@@ -239,7 +239,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "iot_center")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "node_memory_usage")
                   |> filter(fn: (r) => r["_field"] == "arrayBuffers")
@@ -283,7 +283,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "iot_center")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "node_cpu_usage")
                   |> filter(fn: (r) => r["_field"] == "system" or r["_field"] == "user")
@@ -328,7 +328,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "iot_center")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "node_memory_usage")
                   |> filter(fn: (r) => r["_field"] == "heapTotal" or r["_field"] == "heapUsed")
@@ -372,7 +372,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "iot_center")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "node_resource_usage")
                   |> filter(fn: (r) => r["_field"] == "fsRead" or r["_field"] == "fsWrite")

@@ -85,7 +85,7 @@ spec:
           - query: |-
                 import "math"
  
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                     |> range(start:v.timeRangeStart, stop: v.timeRangeStop)
                     |> filter(fn: (r) =>r._measurement == "influxdb_uptime_seconds")
                     |> filter(fn:(r) => r._field == "gauge")
@@ -150,7 +150,7 @@ spec:
         name: Organizations
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "influxdb_organizations_total")
                   |> last()
@@ -186,7 +186,7 @@ spec:
         name: Telegraf Configs
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "influxdb_telegrafs_total")
                   |> last()
@@ -230,7 +230,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "boltdb_reads_total")
                   |> derivative(unit: 1s, nonNegative: true)
@@ -271,7 +271,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "http_api_requests_total")
                   |> filter(fn: (r) => r.path == "/api/v2/query")
@@ -294,7 +294,7 @@ spec:
         name: Memory Allocations (Bytes)
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "go_memstats_alloc_bytes_total")
                   |> derivative(unit: 1s, nonNegative: true)
@@ -326,7 +326,7 @@ spec:
         name: Users
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "influxdb_users_total")
                   |> last()
@@ -360,7 +360,7 @@ spec:
         name: Dashboards
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "influxdb_dashboards_total")
                   |> last()
@@ -458,7 +458,7 @@ spec:
             2, but you probably already knew that.
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "influxdb_info")
                   |> last()
@@ -503,12 +503,12 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                bytes_used = from(bucket: "oss_metrics")
+                bytes_used = from(bucket: "telegraf")
                     |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                     |> filter(fn: (r) => r._measurement == "go_memstats_alloc_bytes")
                     |> drop(columns: ["_start", "_stop"])
 
-                total_bytes = from(bucket: "oss_metrics")
+                total_bytes = from(bucket: "telegraf")
                     |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                     |> filter(fn: (r) => r._measurement == "go_memstats_sys_bytes")
                     |> drop(columns: ["_start", "_stop"])
@@ -551,7 +551,7 @@ spec:
         name: Buckets (Including System)
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "influxdb_buckets_total")
                   |> last()
@@ -585,7 +585,7 @@ spec:
         name: Scrapers
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "influxdb_scrapers_total")
                   |> last()
@@ -630,7 +630,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "boltdb_writes_total")
                   |> derivative(unit: 1s, nonNegative: true)
@@ -672,7 +672,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "go_memstats_mallocs_total" or r._measurement == "go_memstats_frees_total")
                   |> derivative(unit: 1s, nonNegative: false)
@@ -705,7 +705,7 @@ spec:
         name: Tokens
         queries:
           - query: |-
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "influxdb_tokens_total")
                   |> last()
@@ -756,7 +756,7 @@ spec:
           - query: |-
                 import "csv"
 
-                from(bucket: "oss_metrics")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r._measurement == "task_executor_total_runs_complete")
                   |> filter(fn: (r) => r.status == "success")
@@ -984,7 +984,7 @@ spec:
     level: CRIT
     name: InfluxDB OSS Deadman
     query: |-
-        from(bucket: "oss_metrics")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r["_measurement"] == "go_info")
           |> filter(fn: (r) => r["_field"] == "gauge")

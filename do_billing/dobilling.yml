@@ -35,7 +35,7 @@ spec:
         name: Last Update
         queries:
           - query: |-
-                from(bucket: "do_billing")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_do_billing")
                   |> filter(fn: (r) => r["_field"] == "generated_at")
@@ -53,7 +53,7 @@ spec:
         prefix: '$ '
         queries:
           - query: |-
-                from(bucket: "do_billing")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_do_billing")
                   |> filter(fn: (r) => r["_field"] == "account_balance")
@@ -72,7 +72,7 @@ spec:
         prefix: '$ '
         queries:
           - query: |-
-                from(bucket: "do_billing")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_do_billing")
                   |> filter(fn: (r) => r["_field"] == "month_to_date_usage")
@@ -107,7 +107,7 @@ spec:
         position: stacked
         queries:
           - query: |-
-                from(bucket: "do_billing")
+                from(bucket: "telegraf")
                   |> range(start: -30d)
                   |> filter(fn: (r) => r["_measurement"] == "exec_do_billing")
                   |> filter(fn: (r) => r["_field"] == "month_to_date_usage")
@@ -130,7 +130,7 @@ spec:
         prefix: '$ '
         queries:
           - query: |-
-                from(bucket: "do_billing")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "exec_do_billing")
                   |> filter(fn: (r) => r["_field"] == "month_to_date_balance")
@@ -164,7 +164,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "do_billing")
+                from(bucket: "telegraf")
                   |> range(start: -10d)
                   |> filter(fn: (r) => r["_measurement"] == "exec_do_billing")
                   |> filter(fn: (r) => r["_field"] == "month_to_date_balance")

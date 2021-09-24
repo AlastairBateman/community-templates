@@ -35,7 +35,7 @@ spec:
         name: Number of Certificates
         queries:
           - query: |-
-                from(bucket: "x509")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "x509_cert")
                   |> filter(fn: (r) => r["_field"] == "expiry")
@@ -58,7 +58,7 @@ spec:
         name: cduser.com - Expire in
         queries:
           - query: |-
-                from(bucket: "x509")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "x509_cert")
                   |> filter(fn: (r) => r["_field"] == "expiry")
@@ -84,7 +84,7 @@ spec:
         name: influxdata.com - Expire in
         queries:
           - query: |-
-                from(bucket: "x509")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "x509_cert")
                   |> filter(fn: (r) => r["_field"] == "expiry")
@@ -110,7 +110,7 @@ spec:
         name: stats.cduser.com - Expire in
         queries:
           - query: |-
-                from(bucket: "x509")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "x509_cert")
                   |> filter(fn: (r) => r["_field"] == "expiry")
@@ -136,7 +136,7 @@ spec:
         name: twitter.com - Expire in
         queries:
           - query: |-
-                from(bucket: "x509")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "x509_cert")
                   |> filter(fn: (r) => r["_field"] == "expiry")
@@ -162,7 +162,7 @@ spec:
         name: google.com - Expire in
         queries:
           - query: |-
-                from(bucket: "x509")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "x509_cert")
                   |> filter(fn: (r) => r["_field"] == "expiry")

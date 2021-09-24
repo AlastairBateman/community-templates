@@ -27,7 +27,7 @@ spec:
     every: 15m0s
     name: Kailua Threshold
     query: |-
-        from(bucket: "node8")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r["_measurement"] == "modbus")
           |> filter(fn: (r) => r["_field"] == "Central/Wahiawa")
@@ -58,7 +58,7 @@ spec:
     every: 15m0s
     name: University/Manoa Threshold
     query: |-
-        from(bucket: "node8")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r["_measurement"] == "modbus")
           |> filter(fn: (r) => r["_field"] == "University/Manoa")
@@ -89,7 +89,7 @@ spec:
     every: 15m0s
     name: Kahuku Threshold
     query: |-
-        from(bucket: "node8")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r["_measurement"] == "modbus")
           |> filter(fn: (r) => r["_field"] == "Central/Wahiawa")
@@ -120,7 +120,7 @@ spec:
     every: 15m0s
     name: Kalihi Threshold
     query: |-
-        from(bucket: "node8")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r["_measurement"] == "modbus")
           |> filter(fn: (r) => r["_field"] == "Kalihi")
@@ -151,7 +151,7 @@ spec:
     every: 15m0s
     name: Island Pulse `Total_System_Generation` Threshold
     query: |-
-        from(bucket: "node8")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r["_measurement"] == "modbus")
           |> filter(fn: (r) => r["_field"] == "Total_System_Generation")
@@ -186,7 +186,7 @@ spec:
     every: 15m0s
     name: Ewa Threshold
     query: |-
-        from(bucket: "node8")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r["_measurement"] == "modbus")
           |> filter(fn: (r) => r["_field"] == "Central/Wahiawa")
@@ -217,7 +217,7 @@ spec:
     every: 15m0s
     name: Downtown Threshold
     query: |-
-        from(bucket: "node8")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r["_measurement"] == "modbus")
           |> filter(fn: (r) => r["_field"] == "Central/Wahiawa")
@@ -248,7 +248,7 @@ spec:
     every: 15m0s
     name: Airport Threshold
     query: |-
-        from(bucket: "node8")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r["_measurement"] == "modbus")
           |> filter(fn: (r) => r["_field"] == "Airport")
@@ -279,7 +279,7 @@ spec:
     every: 15m0s
     name: Central/Wahiawa Threshold
     query: |-
-        from(bucket: "node8")
+        from(bucket: "telegraf")
           |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
           |> filter(fn: (r) => r["_measurement"] == "modbus")
           |> filter(fn: (r) => r["_field"] == "Central/Wahiawa")
@@ -357,7 +357,7 @@ spec:
         name: "\U0001F50C Today's usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -1d, stop: now())
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == "Airport" or r["_field"] == "Central/Wahiawa" or r["_field"] == "Downtown" or r["_field"] == "Ewa" or r["_field"] == "Kahuku" or r["_field"] == "Kailua" or r["_field"] == "Kalihi" or r["_field"] == "University/Manoa")
@@ -376,7 +376,7 @@ spec:
         name: "\U0001F50C Yesterday's usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -2d, stop: -12h)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == "Airport" or r["_field"] == "Central/Wahiawa" or r["_field"] == "Downtown" or r["_field"] == "Ewa" or r["_field"] == "Kahuku" or r["_field"] == "Kailua" or r["_field"] == "Kalihi" or r["_field"] == "University/Manoa")
@@ -400,7 +400,7 @@ spec:
         name: "\U0001F50C Today Highest Usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -1d, stop: now())
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == "Airport" or r["_field"] == "Central/Wahiawa" or r["_field"] == "Downtown" or r["_field"] == "Ewa" or r["_field"] == "Kahuku" or r["_field"] == "Kailua" or r["_field"] == "Kalihi" or r["_field"] == "University/Manoa")
@@ -424,7 +424,7 @@ spec:
         name: "\U0001F50C Yesterday Lowest Usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -1d, stop: -3h)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == "Airport" or r["_field"] == "Central/Wahiawa" or r["_field"] == "Downtown" or r["_field"] == "Ewa" or r["_field"] == "Kahuku" or r["_field"] == "Kailua" or r["_field"] == "Kalihi" or r["_field"] == "University/Manoa")
@@ -458,7 +458,7 @@ spec:
         name: ♻️ Production avg. past 1d
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -1d, stop: now())
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.energy_types)
@@ -475,7 +475,7 @@ spec:
         name: ♻️ CLEAN ENERGY
         queries:
           - query: |-
-                sum_result = from(bucket: "node8")
+                sum_result = from(bucket: "telegraf")
                   |> range(start: -30m, stop: now())
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == "WindFarm" or r["_field"] == "Waste2Energy" or r["_field"] == "Solar" or r["_field"] == "BioFuel")
@@ -521,7 +521,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -2d, stop: now())
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
@@ -542,7 +542,7 @@ spec:
         name: "\U0001F50C \U0001F4C8 Today highest usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -1d, stop: now())
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
@@ -565,7 +565,7 @@ spec:
         name: "\U0001F50C Today lowest MW usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -1d, stop: now())
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
@@ -588,7 +588,7 @@ spec:
         name: "\U0001F50C \U0001F4C8-1d highest usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -2d, stop: -1d)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
@@ -614,7 +614,7 @@ spec:
         noteOnEmpty: true
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -2d, stop: -1d)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
@@ -653,7 +653,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == "BioFuel" or r["_field"] == "Coal" or r["_field"] == "Fossil_Fuel" or r["_field"] == "Solar" or r["_field"] == "Waste2Energy" or r["_field"] == "WindFarm")
@@ -701,7 +701,7 @@ spec:
         name: ♻️ Consolidated Prouction
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == "BioFuel" or r["_field"] == "Coal" or r["_field"] == "Fossil_Fuel" or r["_field"] == "Solar" or r["_field"] == "Waste2Energy" or r["_field"] == "WindFarm")
@@ -739,7 +739,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -1d, stop: now())
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.energy_types)
@@ -761,7 +761,7 @@ spec:
         name: "\U0001F50C \U0001F4C8 -2d highest usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -3d, stop: -2d)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
@@ -785,7 +785,7 @@ spec:
         name: "\U0001F50C -2d lowest usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -3d, stop: -2d)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
@@ -809,7 +809,7 @@ spec:
         name: ♻️ Total System Generation
         queries:
           - query: |-
-                sum_result = from(bucket: "node8")
+                sum_result = from(bucket: "telegraf")
                   |> range(start: -30m, stop: now())
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == "Total_System_Generation")
@@ -833,7 +833,7 @@ spec:
         name: "\U0001F50C \U0001F4C8 -3d highest usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -4d, stop: -3d)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
@@ -857,7 +857,7 @@ spec:
         name: "\U0001F50C -3d lowest usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -4d, stop: -3d)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
@@ -908,7 +908,7 @@ spec:
         name: "\U0001F50C Consolidated Usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == "Airport" or r["_field"] == "Central/Wahiawa" or r["_field"] == "Downtown" or r["_field"] == "Ewa" or r["_field"] == "Kahuku" or r["_field"] == "Kailua" or r["_field"] == "Kalihi" or r["_field"] == "University/Manoa")
@@ -931,7 +931,7 @@ spec:
         name: "\U0001F50C \U0001F4C8 -4d highest usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -5d, stop: -4d)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
@@ -955,7 +955,7 @@ spec:
         name: "\U0001F50C -4d lowest usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -5d, stop: -4d)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
@@ -979,7 +979,7 @@ spec:
         name: "\U0001F50C \U0001F4C8 -5d highest usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -6d, stop: -5d)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
@@ -1003,7 +1003,7 @@ spec:
         name: "\U0001F50C -5d lowest usage"
         queries:
           - query: |-
-                from(bucket: "node8")
+                from(bucket: "telegraf")
                   |> range(start: -6d, stop: -5d)
                   |> filter(fn: (r) => r["_measurement"] == "modbus")
                   |> filter(fn: (r) => r["_field"] == v.area_names)
